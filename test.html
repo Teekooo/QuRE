@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .subjects {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+
+        .subject {
+            margin-bottom: 20px;
+        }
+
+        .subject h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .lesson ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .lesson li {
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .subjects {
+                width: 100%;
+                flex-direction: row;
+                overflow-x: auto;
+            }
+
+            .subject {
+                flex: 1;
+                margin-bottom: 0;
+            }
+
+            .subject h2 {
+                font-size: 16px;
+            }
+
+            .lesson ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+            }
+
+            .lesson li {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="subjects">
+            <div class="subject">
+                <h2>Programming</h2>
+                <div class="lesson">
+                    <h3>Lessons:</h3>
+                    <ul>
+                        <li onclick="showContent('Programming', 'Data Types')">Data Types</li>
+                        <li onclick="showContent('Programming', 'Operators')">Operators</li>
+                        <li onclick="showContent('Programming', 'Control Structures')">Control Structures</li>
+                        <li onclick="showContent('Programming', 'Functions and Methods')">Functions and Methods</li>
+                        <li onclick="showContent('Programming', 'Object-Oriented Programming')">Object-Oriented Programming</li>
+                        <li onclick="showContent('Programming', 'Data Structures')">Data Structures</li>
+                        <li onclick="showContent('Programming', 'Algorithms')">Algorithms</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subject">
+                <h2>USABILITY, HCI and USER INTERACTION DESIGN</h2>
+                <div class="lesson">
+                    <h3>Lessons:</h3>
+                    <ul>
+                        <li onclick="showContent('HCI', 'Usability, HCI and User Interation Design')">Usability, HCI and User Interation Design</li>
+                        <li onclick="showContent('HCI', 'User-Centered Design Principles')">User-Centered Design Principles</li>
+                        <li onclick="showContent('HCI', 'Accessibility and Usability')">Accessibility and Usability</li>
+                        <li onclick="showContent('HCI', 'User Interface Design Patterns')">User Interface Design Patterns</li>
+                        <li onclick="showContent('HCI', 'Cognitive Psychology in HCI')">Cognitive Psychology in HCI</li>
+                        <li onclick="showContent('HCI', 'User Experience Research Methods')">User Experience Research Methods</li>
+                        <li onclick="showContent('HCI', 'Human-Computer Interaction Theories')">Human-Computer Interaction Theories</li>
+                        <li onclick="showContent('HCI', 'Ethics in HCI Design')">Ethics in HCI Design</li>
+                        <li onclick="showContent('HCI', 'Prototyping and Usability Testing')">Prototyping and Usability Testing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subject">
+                <h2>Web Development</h2>
+                <div class="lesson">
+                    <h3>Lessons:</h3>
+                    <ul>
+                        <li onclick="showContent('Web Development', 'HTML and CSS Basics')">HTML and CSS Basics</li>
+                        <li onclick="showContent('Web Development', 'JavaScript Fundamentals')">JavaScript Fundamentals</li>
+                        <li onclick="showContent('Web Development', 'Responsive Design')">Responsive Design</li>
+                        <li onclick="showContent('Web Development', 'Version Control with Git')">Version Control with Git</li>
+                        <li onclick="showContent('Web Development', 'Front-End Frameworks')">Front-End Frameworks</li>
+                        <li onclick="showContent('Web Development', 'Back-End Development')">Back-End Development</li>
+                        <li onclick="showContent('Web Development', 'Project Building')">Project Building</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="content-area">
+            <p>Select a lesson to see more details.</p>
+        </div>
+    </div>
+</body>
+</html>
